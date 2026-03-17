@@ -3,6 +3,7 @@
 *.suo
 *.user
 *.aps
+*.APS
 *.tlog
 *.lastbuildstate
 *.log
