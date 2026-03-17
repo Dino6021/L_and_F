@@ -1,0 +1,65 @@
+# Visual Studio / MSBuild
+.vs/
+*.suo
+*.user
+*.aps
+*.tlog
+*.lastbuildstate
+*.log
+*.recipe
+*.ipch
+*.idb
+*.iobj
+*.ipdb
+*.pch
+*.exp
+*.ilk
+*.meta
+*.tlh
+*.tli
+*.tf4log
+
+# Build outputs
+Debug/
+Release/
+x64/
+x86/
+Win32/
+*.exe
+*.dll
+*.lib
+*.obj
+*.res
+*.pdb
+*.idb
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Source archives (keep original source, not copies)
+L&F_v*.zip
+*.zip
+
+# Backup folders
+*_backups/
+
+# Runtime data (user-specific, should not be versioned)
+**/users.dat
+**/lost_and_found_records/
+**/weekly_summaries/
+**/auction_preparation/
+*.txt
+
+# Release packages
+Release & Source/
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Test build outputs
+L&FTest/x64/
+L&FTest/Debug/
+L&FTest/Release/

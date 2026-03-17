@@ -1,0 +1,422 @@
+// Microsoft Visual C++ generated resource script.
+//
+#pragma code_page(65001)
+
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_LF                  ICON                    "L&F.ico"
+
+IDI_SMALL               ICON                    "small.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_LF MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "退出(&X)",                      IDM_EXIT
+        MENUITEM "导出上周清单(&L)",                  IDM_GENERATE_LAST_WEEK
+        MENUITEM "导出拍卖清单(&B)",                  IDM_AUCTION
+    END
+    POPUP "账户(&A)"
+    BEGIN
+        MENUITEM "登录(&I)",                      IDM_LOGIN
+        MENUITEM "用户管理(&M)",                    IDM_USERS_MANAGEMENT
+    END
+    POPUP "登记(&R)"
+    BEGIN
+        MENUITEM "物品管理(&M)",                    IDM_ITEMS_MANAGEMENT
+        MENUITEM "管理员确认(&C)",                   IDM_CONFIRM
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于(&A) ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_LF ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 L&F"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDI_LF,IDC_STATIC,14,14,20,20
+    LTEXT           "L&F（机房失物招领系统）v1.0",IDC_STATIC,42,13,114,8,SS_NOPREFIX
+    LTEXT           "版权所有(c) 2025",IDC_STATIC,42,54,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,69,50,14,WS_GROUP
+    LTEXT           "核心算法与库：张铁琦 何庆平",IDC_STATIC,42,26,114,8
+    LTEXT           "图形用户界面：朱天麒",IDC_STATIC,42,40,114,8
+END
+
+IDD_LOGIN DIALOGEX 0, 0, 311, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "登录"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,67,129,50,14
+    PUSHBUTTON      "取消",IDCANCEL,184,129,50,14
+    EDITTEXT        IDC_USERNAME,109,32,125,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,109,60,125,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "账号：",IDC_STATIC,67,35,24,8
+    LTEXT           "密码：",IDC_STATIC,67,63,25,8
+END
+
+IDD_CONFIRM DIALOGEX 0, 0, 515, 566
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "管理员确认"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "保存并退出",IDC_SAVE_AND_QUIT2,422,513,50,14
+    LTEXT           "待确认物品列表：(通过选中ID栏数字选中该行物品)",IDC_STATIC,43,26,370,8
+    PUSHBUTTON      "确认物品",IDC_CHECK,44,513,50,14
+    PUSHBUTTON      "刷新列表",IDC_REFRESH,125,513,50,14
+    CONTROL         "",IDC_LIST6,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,43,57,429,438,WS_EX_STATICEDGE
+END
+
+IDD_ITEM_REGISTER DIALOGEX 0, 0, 565, 252
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加物品"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,67,231,50,14
+    PUSHBUTTON      "取消",IDCANCEL,184,231,50,14
+    EDITTEXT        IDC_ITEM_NAME,109,28,125,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_CATEGORY,109,61,125,14,ES_AUTOHSCROLL
+    LTEXT           "物品名称：",IDC_STATIC,67,31,42,8
+    LTEXT           "物品分类：",IDC_STATIC,67,64,42,8
+    LTEXT           "物品型号：",IDC_STATIC,67,99,41,8
+    EDITTEXT        IDC_ITEM_MODEL,109,96,125,14,ES_AUTOHSCROLL
+    LTEXT           "物品描述：",IDC_STATIC,67,134,41,8
+    EDITTEXT        IDC_ITEM_DESCRIBE,109,131,125,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_LOCATION,327,31,125,14,ES_AUTOHSCROLL
+    LTEXT           "拾得位置：",IDC_STATIC,285,33,42,8
+    LTEXT           "遗失时间：",IDC_STATIC,285,66,42,8
+    LTEXT           "拾得人：",IDC_STATIC,285,99,33,8
+    EDITTEXT        IDC_ITEM_FINDER,327,96,125,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_LOST_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_APPCANPARSE | WS_TABSTOP,330,63,121,15
+END
+
+IDD_DELETE_USER DIALOGEX 0, 0, 309, 86
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "删除用户"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,253,65,50,14
+    LTEXT           "删除用户：",IDC_STATIC,53,35,41,8
+    EDITTEXT        IDC_USER_TO_DELETE,96,32,149,14,ES_AUTOHSCROLL
+END
+
+IDD_ITEMS_MANAGER DIALOGEX 0, 0, 1169, 566
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "失物招领物品管理"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "保存并退出",IDC_SAVE_AND_QUIT1,422,513,50,14
+    LTEXT           "物品列表：",IDC_STATIC,43,26,41,8
+    PUSHBUTTON      "登记物品",IDC_REGISTER,44,513,50,14
+    PUSHBUTTON      "认领物品",IDC_CLAME,177,513,50,14
+    CONTROL         "",IDC_LIST5,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,43,57,1087,404,WS_EX_STATICEDGE
+    PUSHBUTTON      "查询物品",IDC_QUERY,247,513,50,14
+    PUSHBUTTON      "删除物品",IDC_DELETE,111,513,50,14
+    COMBOBOX        IDC_SORT,324,513,80,90,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ADD_USER DIALOGEX 0, 0, 311, 150
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加用户"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,67,129,50,14
+    PUSHBUTTON      "取消",IDCANCEL,184,129,50,14
+    EDITTEXT        IDC_USERNAME,109,28,125,14,ES_AUTOHSCROLL
+    LTEXT           "账号：",IDC_STATIC,67,31,24,8
+    COMBOBOX        IDC_COMBO1,109,97,125,60,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "类型：",IDC_STATIC,67,99,25,8
+    LTEXT           "密码：",IDC_STATIC,67,64,25,8
+    EDITTEXT        IDC_PASSWORD,109,61,125,14,ES_AUTOHSCROLL
+END
+
+IDD_ITEM_DELETE DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "删除物品"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+    EDITTEXT        IDC_ID_DELETE,105,86,101,14,ES_AUTOHSCROLL
+    LTEXT           "请输入需要删除的物品的ID",IDC_STATIC,107,53,96,8
+END
+
+IDD_ITEM_CLAIMER DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "物品认领"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+    EDITTEXT        IDC_CLAIMER_ID,131,58,107,14,ES_AUTOHSCROLL
+    LTEXT           "认领者学号：",IDC_STATIC,72,61,49,8
+    EDITTEXT        IDC_CLAIMER_TEL,131,78,107,14,ES_AUTOHSCROLL
+    LTEXT           "认领者手机号：",IDC_STATIC,71,82,57,8
+    LTEXT           "认领时间：",IDC_STATIC,72,103,41,8
+    CONTROL         "",IDC_CLAIME_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,131,98,108,15
+    EDITTEXT        IDC_CLAIM_ITEM,132,36,107,14,ES_AUTOHSCROLL
+    LTEXT           "物品ID：",IDC_STATIC,71,39,32,8
+END
+
+IDD_QUERY DIALOGEX 0, 0, 469, 441
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查询物品"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "查询",IDOK,93,401,50,14
+    PUSHBUTTON      "取消",IDCANCEL,307,401,50,14
+    EDITTEXT        IDC_KEYWORD,322,36,88,14,ES_AUTOHSCROLL
+    LTEXT           "关键词：",IDC_STATIC,281,39,33,8
+    COMBOBOX        IDC_WAY_OF_FIND,79,38,44,90,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "按",IDC_STATIC,62,39,9,8
+    LTEXT           "寻找",IDC_STATIC,132,40,17,8
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,47,71,384,315
+END
+
+IDD_USERS_MANAGER1 DIALOGEX 0, 0, 515, 566
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用户管理"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "保存并退出",IDC_SAVE_AND_QUIT,422,513,50,14
+    LTEXT           "用户列表：",IDC_STATIC,43,26,41,8
+    PUSHBUTTON      "添加用户",IDC_ADD_USERS,44,513,50,14
+    PUSHBUTTON      "删除用户",IDC_DELETE_USERS,125,513,50,14
+    CONTROL         "",IDC_LIST4,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,43,57,429,438,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        VERTGUIDE, 42
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_LOGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        VERTGUIDE, 67
+        VERTGUIDE, 109
+        VERTGUIDE, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_CONFIRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 508
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 559
+        HORZGUIDE, 513
+    END
+
+    IDD_ITEM_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 558
+        VERTGUIDE, 67
+        VERTGUIDE, 109
+        VERTGUIDE, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 245
+    END
+
+    IDD_DELETE_USER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_ITEMS_MANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 1162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 559
+        HORZGUIDE, 513
+    END
+
+    IDD_ADD_USER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        VERTGUIDE, 67
+        VERTGUIDE, 109
+        VERTGUIDE, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_ITEM_DELETE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_ITEM_CLAIMER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 71
+        VERTGUIDE, 131
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_QUERY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 462
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 434
+    END
+
+    IDD_USERS_MANAGER1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 508
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 559
+        HORZGUIDE, 513
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "bgp.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "L&F"
+    IDC_LF                  "LF"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
